@@ -6,6 +6,8 @@ TagManager:
   tags:
   - liquors_and_softdrinks
   - onTriiger
+  - diary_and_cheese
+  - pastas_and_condinments
   layers:
   - Default
   - TransparentFX

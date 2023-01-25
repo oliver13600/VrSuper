@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 
 
-public class liquors_and_softdrinks_Trigger : MonoBehaviour
+public class liquors_and_softdrinks_trigger : MonoBehaviour
 {
 
     public Button button;
@@ -23,7 +23,7 @@ public class liquors_and_softdrinks_Trigger : MonoBehaviour
     public void Click()
     {
         obj = GameObject.FindGameObjectWithTag("liquors_and_softdrinks");
-        obj.AddComponent<helloWorld>();
+        obj.AddComponent<outline_liquors_and_softdrinks>();
         Debug.Log("test");
     }
 
