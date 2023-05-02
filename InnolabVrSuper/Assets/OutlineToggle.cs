@@ -12,12 +12,14 @@ public class OutlineToggle : MonoBehaviour
         outlineScript = GetComponent<Outline>();
     }
 
+    [System.Obsolete]
     private void OnEnable()
     {
-        interactable.onSelectEntered.AddListener(OnSelect);
+        interactable.onSelectEnter.AddListener(OnSelect);
         interactable.onSelectExited.AddListener(OnDeselect);
     }
 
+    [System.Obsolete]
     private void OnDisable()
     {
         interactable.onSelectEntered.RemoveListener(OnSelect);

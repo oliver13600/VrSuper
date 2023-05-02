@@ -3,7 +3,11 @@ guid: e7987a4f9b79e754c951908fed65bc14
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_LeftController: {instanceID: 0}
+  - m_RightController: {instanceID: 0}
+  - m_LeftControllerOculusPackage: {instanceID: 0}
+  - m_RightControllerOculusPackage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

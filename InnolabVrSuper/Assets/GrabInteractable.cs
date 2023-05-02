@@ -13,12 +13,14 @@ public class GrabInteractable : MonoBehaviour
         interactable = GetComponent<XRGrabInteractable>();
     }
 
+    [System.Obsolete]
     private void OnEnable()
     {
         interactable.onFirstHoverEntered.AddListener(AddToCart);
         interactable.onLastHoverExited.AddListener(RemoveFromCart);
     }
 
+    [System.Obsolete]
     private void OnDisable()
     {
         interactable.onFirstHoverEntered.RemoveListener(AddToCart);
