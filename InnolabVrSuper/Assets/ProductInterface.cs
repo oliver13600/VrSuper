@@ -7,16 +7,18 @@ public class ProductInterface : MonoBehaviour
 {
     private XRGrabInteractable interactable;
 
+    public GameObject ui;
     
 
     // Start is called before the first frame update
     [System.Obsolete]
     void Start()
     {
-        interactable = GetComponentInParent<XRGrabInteractable>();
+        interactable = GetComponent<XRGrabInteractable>();
 
         interactable.onSelectEnter.AddListener(OnSelectEntered);
         interactable.onSelectExited.RemoveListener(OnSelectExited);
+
 
     }
 
@@ -29,12 +31,14 @@ public class ProductInterface : MonoBehaviour
     private void OnSelectEntered(XRBaseInteractor interactor)
     {
         // Activate the objectToActivate when the parent object is grabbed
-        gameObject.SetActive(true);
+        Debug.Log("TestSetActive");
+        ui.SetActive(true);
     }
 
     private void OnSelectExited(XRBaseInteractor interactor)
     {
         // Deactivate the game object when the parent object is released
-        gameObject.SetActive(false);
+        Debug.Log("TestSetActiveFalse");
+        ui.SetActive(false);
     }
 }

@@ -6,13 +6,13 @@ public class FpsCounter : MonoBehaviour
 {
     public int FPS { get; private set; }
     public TextMeshPro displayCurrent;
-    private float[] averageArr = new float[72];
+    private int[] averageArr = new int[72];
     int index = 0;
 
 
     public void Update()
     {
-        float current = (int)(1f / Time.deltaTime);
+        int current = (int)(1f / Time.deltaTime);
         averageArr[index++] = current;
         if (index == 72)
         {
