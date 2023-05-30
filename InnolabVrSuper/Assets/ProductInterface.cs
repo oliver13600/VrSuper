@@ -17,9 +17,7 @@ public class ProductInterface : MonoBehaviour
         interactable = GetComponent<XRGrabInteractable>();
 
         interactable.onSelectEnter.AddListener(OnSelectEntered);
-        interactable.onSelectExited.RemoveListener(OnSelectExited);
-
-
+        interactable.onSelectExited.AddListener(OnSelectExited);
     }
 
     // Update is called once per frame
