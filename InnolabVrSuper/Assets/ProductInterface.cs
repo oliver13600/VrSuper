@@ -8,7 +8,9 @@ public class ProductInterface : MonoBehaviour
     private XRGrabInteractable interactable;
 
     public GameObject ui;
-    
+
+    private GameObject player;
+
 
     // Start is called before the first frame update
     [System.Obsolete]
@@ -18,6 +20,11 @@ public class ProductInterface : MonoBehaviour
 
         interactable.onSelectEnter.AddListener(OnSelectEntered);
         interactable.onSelectExited.AddListener(OnSelectExited);
+
+        player = GameObject.FindGameObjectWithTag("MainCamera");
+
+        gameObject.transform.rotation = player.transform.rotation;
+
     }
 
     // Update is called once per frame
