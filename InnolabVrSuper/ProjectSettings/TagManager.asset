@@ -8,6 +8,7 @@ TagManager:
   - onTriiger
   - diary_and_cheese
   - pastas_and_condinments
+  - housekeeping
   layers:
   - Default
   - TransparentFX
