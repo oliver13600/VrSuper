@@ -35,8 +35,8 @@ public class outline_liquors_and_softdrinks : MonoBehaviour
             //if (gameObject.GetComponent<Outline>())
             //{
                 var outline = gameObject.AddComponent<Outline>();
-                outline.OutlineColor = Color.yellow;
-                outline.OutlineWidth = 7f;
+                outline.OutlineColor = Color.red;
+                outline.OutlineWidth = 9f;
                 outline.OutlineMode = Outline.Mode.OutlineVisible;
             //}
         }
