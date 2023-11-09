@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ModernSupermarket/Scenes/Scene_Supermarket/MainMenu.unity
+    guid: 094102b2383df2d4cac5af8ec3a7b26f
+  - enabled: 1
     path: Assets/ModernSupermarket/Scenes/Scene_Supermarket/Supermarket.unity
     guid: 95cb9ac7a1494454abac29b7879ed266
   m_configObjects:
