@@ -9,6 +9,7 @@ TagManager:
   - diary_and_cheese
   - pastas_and_condinments
   - housekeeping
+  - product
   layers:
   - Default
   - TransparentFX
