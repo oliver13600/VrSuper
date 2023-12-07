@@ -34,22 +34,12 @@ public class Shoppingcart : MonoBehaviour
 
     private void OnSelectExited(XRBaseInteractor interactor)
     {
-        // Deactivate the game object when the parent object is released
-        Debug.Log("TestSetActiveFalse");
-        ui.SetActive(false);
-
-        GameObject selectedObject = interactor.selectTarget.gameObject;
-        if (selectedObject.CompareTag("liquors_and_softdrinks") || selectedObject.CompareTag("housekeeping") || selectedObject.CompareTag("pastas_and_condiments"))
-        {
-            productList.Remove(selectedObject);
-            UpdateProductNamesText();
-        }
+        
     }
 
     public void AddItemToCart()
     {
-        itemCount++;
-        UpdateItemCountText();
+        
     }
 
     public void RemoveItemFromCart()
