@@ -11,9 +11,17 @@ public class GameController : MonoBehaviour
 
     private List<string> productList = new List<string>();
 
+    private List<ProductInfo> productList2 = new List<ProductInfo>();
+
+    public ProductInfo productInfoPrefab;
+
+    
     // Start is called before the first frame update
     void Start()
     {
+        ProductInfo productInfo = new ProductInfo();
+      
+        
         // Ensure the shoppingCartCollider has a Collider and set it as a trigger
         if (shoppingCartCollider != null)
         {
