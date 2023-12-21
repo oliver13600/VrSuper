@@ -9,6 +9,11 @@ TagManager:
   - diary_and_cheese
   - pastas_and_condinments
   - housekeeping
+  - alcoholic_drinks
+  - non_alcoholic_drinks
+  - diary
+  - vegan
+  - ready_to_eat
   layers:
   - Default
   - TransparentFX
