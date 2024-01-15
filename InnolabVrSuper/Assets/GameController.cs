@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public GameObject shoppingCartCollider;
     public TMP_Text productsDisplay;
+    public TMP_Text checkoutScreenText;
+    public Button purchaseButton;
+    public AudioSource audioSource;
+    public GameObject door1;
+    public GameObject door2;
+    public GameObject door1_2;
+    public GameObject door2_2;
+
     public List<string> targetTags; // List of tags to check against
 
     private List<string> productList = new List<string>();
@@ -15,13 +23,22 @@ public class GameController : MonoBehaviour
 
     public ProductInfo productInfoPrefab;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        // Initialize the purchase button to be inactive at start
+        if (purchaseButton != null)
+        {
+            purchaseButton.gameObject.SetActive(false);
+            purchaseButton?.onClick.AddListener(() => CompletePurchase());
+        }
+        door1_2.SetActive(false);
+        door2_2.SetActive(false);
+
         ProductInfo productInfo = new ProductInfo();
-      
-        
+
+
         // Ensure the shoppingCartCollider has a Collider and set it as a trigger
         if (shoppingCartCollider != null)
         {
@@ -51,14 +68,38 @@ public class GameController : MonoBehaviour
             string newItem = other.name;
             productList.Add(newItem);
             productsDisplay.text = updateProductDisplay();
+            checkoutScreenText.text = updateProductDisplay();
             Destroy(other.gameObject);
         }
+        // Activate the purchase button when an item is added to the cart
+        if (productList.Count > 0 && purchaseButton != null)
+        {
+            purchaseButton.gameObject.SetActive(true);
+        }
+    }
+
+    private void CompletePurchase()
+    {
+        // Display thank you message
+        checkoutScreenText.text = "Thank you for shopping!";
+        audioSource.Play();
+        door1.SetActive(false);
+        door2.SetActive(false);
+        door1_2.SetActive(true);
+        door2_2.SetActive(true);
+
+        // Possibly clear the cart here if needed
+        productsDisplay.text = "";
+        productList.Clear();
+
+        // Deactivate the purchase button after purchase
+        purchaseButton.gameObject.SetActive(false);
     }
 
     private string updateProductDisplay()
     {
         string result = "";
-        foreach(string product in productList)
+        foreach (string product in productList)
         {
             result = result + "\n" + product;
         }
@@ -68,7 +109,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        productsDisplay.text = updateProductDisplay();
+        if (productList.Count > 0)
+        {
+            productsDisplay.text = updateProductDisplay();
+            checkoutScreenText.text = updateProductDisplay();
+        }
     }
 }
 
