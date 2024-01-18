@@ -22,14 +22,28 @@ public class pastas_and_condinments_trigger : MonoBehaviour
 
     public void Click()
     {
-        obj = GameObject.FindGameObjectWithTag("pastas_and_condinments");
-        obj.AddComponent<outline_pastas_and_condinments>();
-        Debug.Log("test");
+        GameObject[] diaryObjects = GameObject.FindGameObjectsWithTag("vegan");
+
+
+
+        foreach (GameObject diaryObject in diaryObjects)
+        {
+            // Check if the object already has an "Outline" component
+            if (diaryObject.GetComponent<Outline>() == null)
+            {
+                var outline = diaryObject.AddComponent<Outline>();
+                outline.OutlineColor = Color.red;
+                outline.OutlineWidth = 7f;
+                outline.OutlineMode = Outline.Mode.OutlineVisible;
+            }
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

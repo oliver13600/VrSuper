@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
 
-public class liquors_trigger : MonoBehaviour
+public class ready_to_eat_trigger : MonoBehaviour
 {
     public Button button;
     public GameObject obj;
@@ -21,7 +20,7 @@ public class liquors_trigger : MonoBehaviour
 
     public void Click()
     {
-        GameObject[] diaryObjects = GameObject.FindGameObjectsWithTag("alcoholic_drinks");
+        GameObject[] diaryObjects = GameObject.FindGameObjectsWithTag("ready_to_eat");
 
 
 
@@ -31,7 +30,7 @@ public class liquors_trigger : MonoBehaviour
             if (diaryObject.GetComponent<Outline>() == null)
             {
                 var outline = diaryObject.AddComponent<Outline>();
-                outline.OutlineColor = Color.blue;
+                outline.OutlineColor = Color.cyan;
                 outline.OutlineWidth = 7f;
                 outline.OutlineMode = Outline.Mode.OutlineVisible;
             }

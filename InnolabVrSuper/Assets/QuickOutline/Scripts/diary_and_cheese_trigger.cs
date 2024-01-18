@@ -22,9 +22,23 @@ public class diary_and_cheese_trigger : MonoBehaviour
 
     public void Click()
     {
-        obj = GameObject.FindGameObjectWithTag("diary_and_cheese");
-        obj.AddComponent<outline_diary_and_cheese>();
-        Debug.Log("cheese");
+        GameObject[] diaryObjects = GameObject.FindGameObjectsWithTag("diary");
+
+        
+
+        foreach (GameObject diaryObject in diaryObjects)
+        {
+            // Check if the object already has an "Outline" component
+            if (diaryObject.GetComponent<Outline>() == null)
+            {
+                var outline = diaryObject.AddComponent<Outline>();
+                outline.OutlineColor = Color.green;
+                outline.OutlineWidth = 7f;
+                outline.OutlineMode = Outline.Mode.OutlineVisible;
+            }
+        }
+
+        
     }
 
     // Update is called once per frame

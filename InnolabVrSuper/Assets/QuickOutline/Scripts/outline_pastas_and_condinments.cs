@@ -30,7 +30,7 @@ public class outline_pastas_and_condinments : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.tag == "pastas_and_condinments")
+        if(gameObject.tag == "vegan")
         {
             //if (gameObject.GetComponent<Outline>())
             //{

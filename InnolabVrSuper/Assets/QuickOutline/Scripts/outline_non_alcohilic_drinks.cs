@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using UnityEditor;
 using UnityEngine;
 
-
-public class outline_diary_and_cheese : MonoBehaviour
+public class outline_non_alcohilic_drinks : MonoBehaviour
 {
     public GameObject obj;
     //public static bool isActivated = false;
@@ -15,8 +12,8 @@ public class outline_diary_and_cheese : MonoBehaviour
         //var products = transform.Find("Pasta_g87jtq");
         //obj.GetComponent;
         //var outline = gameObject.AddComponent<Outline>();
-        
-        
+
+
         //outline.OutlineColor = Color.yellow;
         //outline.OutlineWidth = 7f;
         //Debug.Log(gameObject.name); 
@@ -30,14 +27,14 @@ public class outline_diary_and_cheese : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.tag == "diary")
+        if (gameObject.tag == "non_alcoholic_drinks")
         {
             //if (gameObject.GetComponent<Outline>())
             //{
-                var outline = gameObject.AddComponent<Outline>();
-                outline.OutlineColor = Color.green;
-                outline.OutlineWidth = 7f;
-                outline.OutlineMode = Outline.Mode.OutlineVisible;
+            var outline = gameObject.AddComponent<Outline>();
+            outline.OutlineColor = Color.gray;
+            outline.OutlineWidth = 9f;
+            outline.OutlineMode = Outline.Mode.OutlineVisible;
             //}
         }
         Debug.Log(gameObject.tag);
