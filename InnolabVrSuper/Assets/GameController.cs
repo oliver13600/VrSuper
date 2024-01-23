@@ -92,6 +92,7 @@ public class GameController : MonoBehaviour
 
         // Possibly clear the cart here if needed
         productsDisplay.text = "";
+        GlobalData.GlobalProductList = new List<string>(productList);
         productList.Clear();
 
         // Deactivate the purchase button after purchase
@@ -138,4 +139,8 @@ public class PhysicsTriggerEvent : MonoBehaviour
     }
 }
 
+public static class GlobalData
+{
+    public static List<string> GlobalProductList { get; set; } = new List<string>();
+}
 
