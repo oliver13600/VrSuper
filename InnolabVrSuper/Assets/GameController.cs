@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class GameController : MonoBehaviour
 {
     public GameObject shoppingCartCollider;
@@ -94,6 +96,7 @@ public class GameController : MonoBehaviour
 
         // Deactivate the purchase button after purchase
         purchaseButton.gameObject.SetActive(false);
+        StartCoroutine(LoadEndScreenAfterDelay(10));
     }
 
     private string updateProductDisplay()
@@ -115,6 +118,12 @@ public class GameController : MonoBehaviour
             checkoutScreenText.text = updateProductDisplay();
         }
     }
+
+    IEnumerator LoadEndScreenAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified delay
+        SceneManager.LoadScene("EndScreen"); // Load the EndScreen scene
+    }
 }
 
 // Helper class to handle physics trigger events
@@ -128,3 +137,5 @@ public class PhysicsTriggerEvent : MonoBehaviour
         OnTriggerEnterEvent?.Invoke(other);
     }
 }
+
+

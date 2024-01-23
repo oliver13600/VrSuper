@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ModernSupermarket/Scenes/Scene_Supermarket/Supermarket.unity
     guid: 95cb9ac7a1494454abac29b7879ed266
+  - enabled: 1
+    path: Assets/ModernSupermarket/Scenes/Scene_Supermarket/EndScreen.unity
+    guid: ed2fd30b28e2afb4386b61fd1417d5f7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
