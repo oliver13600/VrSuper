@@ -97,7 +97,7 @@ public class GameController : MonoBehaviour
 
         // Deactivate the purchase button after purchase
         purchaseButton.gameObject.SetActive(false);
-        StartCoroutine(LoadEndScreenAfterDelay(10));
+        StartCoroutine(LoadEndScreenAfterDelay(5));
     }
 
     private string updateProductDisplay()
